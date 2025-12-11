@@ -30,7 +30,8 @@ def main():
     st.pyplot(fig3)
 
     st.header("Settlement STP % by Product Group (Last 4 Weeks)")
-    fig4 = plot_settlement_stp(subproduct_metrics)
+    deals_4w = results.get("deals_4w")
+    fig4 = plot_settlement_stp(subproduct_metrics, deals_4w)
     st.pyplot(fig4)
 
     st.header("Weekly volume of unconfirmed deals by Product Group (Last 4 Weeks)")

@@ -13,7 +13,11 @@ group_map = {
     "Credit Derivatives": ["CDS", "TRS"],
 }
 
-def plot_settlement_stp(subproduct_metrics: dict):
+def plot_settlement_stp(subproduct_metrics: dict, deals_4w: pd.DataFrame):
+    """
+    Minimal-change refactor: accept deals_4w as a parameter (provided by run_analytics()).
+    The rest of the function follows the original flow and returns a matplotlib Figure.
+    """
 
     if not subproduct_metrics:
         # Return an empty figure rather than crashing
@@ -24,7 +28,8 @@ def plot_settlement_stp(subproduct_metrics: dict):
 
     group_names = list(group_map.keys())
 
-    # --- Get ordered weeks from deals_4w ---
+    # --- Get ordered weeks from deals_4w (deals_4w is expected to be passed in) ---
+    # assume run_analytics() returned deals_4w; use it directly
     week_periods = sorted(deals_4w["week"].unique())
     num_weeks = len(week_periods)
     week_labels = [str(w) for w in week_periods]
@@ -64,7 +69,7 @@ def plot_settlement_stp(subproduct_metrics: dict):
             if total > 0:
                 settle_stp_pct[gi, wi] = stp_yes / total * 100.0
 
-      # ΔSettlement STP in percentage points vs previous week
+    # ΔSettlement STP in percentage points vs previous week
     settle_wow_pp = np.full((num_groups, num_weeks), np.nan)
 
     for gi in range(num_groups):
@@ -94,7 +99,8 @@ def plot_settlement_stp(subproduct_metrics: dict):
     ax.set_xlabel("Product Group")
     ax.set_ylabel("Settlement STP %")
     ax.set_title("Settlement STP % by Product Group (Last 4 Weeks)")
-    ax.set_xticks(x, group_names, rotation=15)
+    ax.set_xticks(x)
+    ax.set_xticklabels(group_names, rotation=15)
     ax.legend(title="Week")
     ax.grid(True, axis="y")
     ax.set_ylim(70, 105)
