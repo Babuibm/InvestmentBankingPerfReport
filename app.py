@@ -14,6 +14,7 @@ def main():
     st.title("Investment Banking Performance Analytics Dashboard")
 
     results = run_analytics()  # uses default cutoff_date_str
+    deals_4w = results.get("deals_4w")
     subproduct_metrics = results["subproduct_metrics"]
     df_margincalls = results["df_margincalls"]
 
@@ -30,7 +31,6 @@ def main():
     st.pyplot(fig3)
 
     st.header("Settlement STP % by Product Group (Last 4 Weeks)")
-    deals_4w = results.get("deals_4w")
     fig4 = plot_settlement_stp(subproduct_metrics, deals_4w=deals_4w)
     st.pyplot(fig4)
 
