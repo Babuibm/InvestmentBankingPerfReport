@@ -31,7 +31,7 @@ def parse_pct_value(x):
     return float(s.replace("%", "").replace(",", ""))
 
 def plot_trade_cap_stp(subproduct_metrics: dict):
-    
+
     if not subproduct_metrics:
         # Return an empty figure rather than crashing
         fig, ax = plt.subplots(figsize=(8, 4))
@@ -87,6 +87,6 @@ def plot_trade_cap_stp(subproduct_metrics: dict):
     ax.set_xticks(x, group_names, rotation=15)
     ax.legend(title="Week")
     ax.grid(True, axis="y")
-    ax.ylim(70, 105)  # keep within 0–100%
+    ax.set_ylim(70, 105)  # keep within 0–100%
     fig.tight_layout()
     return fig
