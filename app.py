@@ -145,7 +145,7 @@ def main():
               function(params) {
                   return {
                       'background-color':'#E5E7E9',
-                      'color':'#000000'
+                      'color':'#000000',
                       'font-weight': 'bold',
                       'text-align': 'center'
                   }
