@@ -140,17 +140,24 @@ def main():
               }
               """)
 
-              # Header style (background + bold text)
-              header_style_jscode = JsCode("""
-              function(params) {
-                  return {
-                      'background-color':'#E5E7E9',
-                      'color':'#000000',
-                      'font-weight': 'bold',
-                      'text-align': 'center'
-                  }
-              }
-              """)
+              header_template = """
+                <div class='ag-cell-label-container' role='presentation' 
+                    style='background-color:#E5E7E9; color:#000000; font-weight:bold; text-align:center; padding:6px;'>
+                  <span ref='eLabel'></span>
+                </div>
+              """
+
+              # # Header style (background + bold text)
+              # header_style_jscode = JsCode("""
+              # function(params) {
+              #     return {
+              #         'background-color':'#E5E7E9',
+              #         'color':'#000000',
+              #         'font-weight': 'bold',
+              #         'text-align': 'center'
+              #     }
+              # }
+              # """)
 
               # Build grid options
               gb = GridOptionsBuilder.from_dataframe(df_for_grid)
@@ -162,12 +169,7 @@ def main():
               gb.configure_pagination(enabled=True, paginationPageSize=10)
               grid_options = gb.build()
               grid_options["defaultColDef"]["headerComponentParams"] = {
-                        "template": """
-                          <div class='ag-cell-label-container' role='presentation' style='background-color:#E5E7E9;color:#000;font-weight:bold;text-align:center;padding:4px;'>
-                            <span ref='eLabel'></span>
-                          </div>
-                          """
-              }
+                        "template": header_template }                          
 
               # Display
               grid_response = AgGrid(
