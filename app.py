@@ -1,5 +1,6 @@
 
 import streamlit as st
+import numpy as np
 from app_core.analytics import run_analytics
 from app_core.charts.num_deals_chart import plot_deal_volumes
 from app_core.charts.val_deals_chart import plot_deal_value
