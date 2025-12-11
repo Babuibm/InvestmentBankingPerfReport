@@ -97,6 +97,6 @@ def plot_settlement_stp(subproduct_metrics: dict):
     ax.set_xticks(x, group_names, rotation=15)
     ax.legend(title="Week")
     ax.grid(True, axis="y")
-    ax.ylim(70, 105)
+    ax.set_ylim(70, 105)
     fig.tight_layout()
     return fig
