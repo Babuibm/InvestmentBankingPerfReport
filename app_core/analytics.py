@@ -101,7 +101,11 @@ def run_analytics(cutoff_date_str: str = "2025-12-06"):
     deals_4w = deals[deals["week"].isin(last_weeks)].copy()
 
     week_order = sorted(deals_4w["week"].unique())
-    week_labels = [str(w) for w in week_order]
+    #week_labels = [str(w) for w in week_order]
+    week_labels = [
+    f"{w.start_time.strftime('%d-%b')} to {w.end_time.strftime('%d-%b')}"
+    for w in week_order
+    ]
 
     subproduct_metrics = {}  # dict: sub_product -> metrics_df
 

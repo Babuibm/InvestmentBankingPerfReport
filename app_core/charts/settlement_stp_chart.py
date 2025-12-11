@@ -3,6 +3,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from typing import Optional, Dict, Any
 
+plt.rcParams.update({
+    "font.size": 14,
+    "axes.titlesize": 16,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 12
+})
+
 # --- group_map unchanged ---
 group_map = {
     "Cash Equity": ["Cash Equity"],

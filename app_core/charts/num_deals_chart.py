@@ -2,6 +2,15 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+plt.rcParams.update({
+    "font.size": 14,
+    "axes.titlesize": 16,
+    "axes.labelsize": 14,
+    "xtick.labelsize": 12,
+    "ytick.labelsize": 12,
+    "legend.fontsize": 12
+})
+
 # 1. Define grouping: group name -> list of sub_product keys
 #    (must match subproduct_metrics keys from analytics)
 GROUP_MAP = {
@@ -101,12 +110,12 @@ def plot_deal_volumes(subproduct_metrics: dict):
                 f"{pct:.1f}%",
                 ha="center",
                 va="bottom",
-                fontsize=8,
+                fontsize=14,
             )
 
     ax.set_xlabel("Product Group")
     ax.set_ylabel("Number of Deals")
-    ax.set_title("Weekly Deal Volumes by Product Group (Last 4 Weeks)")
+    ax.set_title("Weekly Deal Volumes (Last 4 Weeks)")
     ax.set_xticks(x)
     ax.set_xticklabels(group_names, rotation=15)
     ax.legend(title="Week")
