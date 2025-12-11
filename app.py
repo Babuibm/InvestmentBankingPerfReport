@@ -28,6 +28,14 @@ def main():
     subproduct_metrics = results["subproduct_metrics"]
     df_margincalls = results["df_margincalls"]
     
+    fig1 = plot_deal_volumes(subproduct_metrics)
+    fig2 = plot_deal_value(subproduct_metrics)
+    fig3 = plot_trade_cap_stp(subproduct_metrics)
+    fig4 = plot_settlement_stp(subproduct_metrics, deals_4w=deals_4w)
+    fig5 = plot_deals_unconfirmed(subproduct_metrics)
+    fig6 = plot_deals_unsettled(subproduct_metrics)
+    fig_counts, fig_amounts = plot_disputed_margin_calls(df_margincalls)
+
     # Tabs: first tab is Weekly Highlights (free-text bullets)
     tab_names = ["Weekly Highlights", "Deal Vol/Value", "STP", "Breaks", "Collateral Disputes"]
     tabs = st.tabs(tab_names)
