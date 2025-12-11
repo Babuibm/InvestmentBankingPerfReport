@@ -110,7 +110,7 @@ def plot_settlement_stp(subproduct_metrics: Dict[str, pd.DataFrame], deals_4w: O
     # Plot
     x = np.arange(num_groups)
     bar_width = 0.18
-    fig, ax = plt.subplots(figsize=(18, 7))
+    fig, ax = plt.subplots(figsize=(18, 14))
 
     for wi in range(num_weeks):
         offset = (wi - (num_weeks - 1) / 2) * bar_width

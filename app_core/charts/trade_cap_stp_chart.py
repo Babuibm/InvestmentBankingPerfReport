@@ -69,7 +69,7 @@ def plot_trade_cap_stp(subproduct_metrics: dict):
     x = np.arange(num_groups)
     bar_width = 0.18
 
-    fig, ax = plt.subplots(figsize=(18, 7))
+    fig, ax = plt.subplots(figsize=(18, 14))
 
     # 4 bars per group: one per week
     for wi in range(num_weeks):

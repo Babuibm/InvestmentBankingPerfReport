@@ -30,7 +30,7 @@ def _parse_count(x):
 
 
 def plot_deal_volumes(subproduct_metrics: dict):
-    
+
     if not subproduct_metrics:
         # Return an empty figure rather than crashing
         fig, ax = plt.subplots(figsize=(8, 4))
@@ -74,7 +74,7 @@ def plot_deal_volumes(subproduct_metrics: dict):
     x = np.arange(num_groups)  # group positions
     bar_width = 0.18
 
-    fig, ax = plt.subplots(figsize=(18, 7))
+    fig, ax = plt.subplots(figsize=(18, 14))
 
     for wi in range(num_weeks):
         # shift each week's bars around group center

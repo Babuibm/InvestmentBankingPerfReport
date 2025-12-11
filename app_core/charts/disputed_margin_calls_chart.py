@@ -123,7 +123,7 @@ def plot_disputed_margin_calls(df_margincalls: pd.DataFrame, last_n_weeks: int =
     x = np.arange(num_types)
     bar_width = 0.18
 
-    fig_counts, ax_counts = plt.subplots(figsize=(14, 5))
+    fig_counts, ax_counts = plt.subplots(figsize=(14, 10))
 
     for j, week in enumerate(last_weeks):
         offset = (j - (num_weeks - 1) / 2) * bar_width
@@ -162,7 +162,7 @@ def plot_disputed_margin_calls(df_margincalls: pd.DataFrame, last_n_weeks: int =
     fig_counts.tight_layout()
 
     # Second plot - by amount
-    fig_amounts, ax_amounts = plt.subplots(figsize=(14, 5))
+    fig_amounts, ax_amounts = plt.subplots(figsize=(14, 10))
 
     for j, week in enumerate(last_weeks):
         offset = (j - (num_weeks - 1) / 2) * bar_width
