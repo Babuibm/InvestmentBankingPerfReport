@@ -131,21 +131,21 @@ def main():
               cols = [cols[-1]] + cols[:-1] if cols[-1] == 'Metric' else cols
               df_for_grid = df_for_grid[cols]
 
-              # Center align data cells
-              cell_style_jscode = JsCode("""
-              function(params) {
-                  return {
-                      'text-align': 'center'
-                  }
-              }
-              """)
+              # # Center align data cells
+              # cell_style_jscode = JsCode("""
+              # function(params) {
+              #     return {
+              #         'text-align': 'center'
+              #     }
+              # }
+              # """)
 
-              header_template = """
-                <div class='ag-cell-label-container' role='presentation' 
-                    style='background-color:#E5E7E9; color:#000000; font-weight:bold; text-align:center; padding:6px;'>
-                  <span ref='eLabel'></span>
-                </div>
-              """
+              # header_template = """
+              #   <div class='ag-cell-label-container' role='presentation' 
+              #       style='background-color:#E5E7E9; color:#000000; font-weight:bold; text-align:center; padding:6px;'>
+              #     <span ref='eLabel'></span>
+              #   </div>
+              # """
 
               # # Header style (background + bold text)
               # header_style_jscode = JsCode("""
@@ -161,15 +161,15 @@ def main():
 
               # Build grid options
               gb = GridOptionsBuilder.from_dataframe(df_for_grid)
-              gb.configure_default_column(editable=False, resizable=True, filter=True, sortable=True,cellStyle=cell_style_jscode,headerClass="custom-header")
+              gb.configure_default_column(editable=False, resizable=True, filter=True, sortable=True)
               gb.configure_column("Metric", pinned="left", wrapText=True, autoHeight=True, width=300,headerTooltip="Metric name")
               # enable quick filter and pagination
               gb.configure_grid_options(domLayout='normal')
               gb.configure_selection(selection_mode="single", use_checkbox=False)
               gb.configure_pagination(enabled=True, paginationPageSize=10)
               grid_options = gb.build()
-              grid_options["defaultColDef"]["headerComponentParams"] = {
-                        "template": header_template }                          
+              # grid_options["defaultColDef"]["headerComponentParams"] = {
+                        # "template": header_template }                          
 
               # Display
               grid_response = AgGrid(
