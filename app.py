@@ -144,8 +144,8 @@ def main():
               header_style_jscode = JsCode("""
               function(params) {
                   return {
-                      'background-color': '#2E4053',
-                      'color': 'white',
+                      'background-color':'#E5E7E9',
+                      'color':'#000000'
                       'font-weight': 'bold',
                       'text-align': 'center'
                   }
@@ -163,7 +163,7 @@ def main():
               grid_options = gb.build()
               grid_options["defaultColDef"]["headerComponentParams"] = {
                         "template": """
-                          <div class='ag-cell-label-container' role='presentation' style='background-color:#2E4053;color:white;font-weight:bold;text-align:center;padding:4px;'>
+                          <div class='ag-cell-label-container' role='presentation' style='background-color:#E5E7E9;color:#000;font-weight:bold;text-align:center;padding:4px;'>
                             <span ref='eLabel'></span>
                           </div>
                           """
