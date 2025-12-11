@@ -119,8 +119,8 @@ def main():
               k1, k2, k3, k4 = st.columns(4)
               k1.metric("Deals (latest week)", f"{total_deals:,.0f}" if not np.isnan(total_deals) else "-")
               k2.metric("Deal Value (USD Mn)", f"{deal_value:,.0f}" if not np.isnan(deal_value) else "-")
-              k3.metric("Unconfirmed % WoW", f"{unconfirmed_pct:.1f}%" if not np.isnan(unconfirmed_pct) else "-")
-              k4.metric("STP %", f"{stp_pct:.1f}%" if not np.isnan(stp_pct) else "-")
+              k3.metric("Unconfirmed deals % WoW", f"{unconfirmed_pct:.1f}%" if not np.isnan(unconfirmed_pct) else "-")
+              k4.metric("Trade Cap STP %", f"{stp_pct:.1f}%" if not np.isnan(stp_pct) else "-")
 
               st.divider()
 
@@ -131,15 +131,43 @@ def main():
               cols = [cols[-1]] + cols[:-1] if cols[-1] == 'Metric' else cols
               df_for_grid = df_for_grid[cols]
 
+              # Center align data cells
+              cell_style_jscode = JsCode("""
+              function(params) {
+                  return {
+                      'text-align': 'center'
+                  }
+              }
+              """)
+
+              # Header style (background + bold text)
+              header_style_jscode = JsCode("""
+              function(params) {
+                  return {
+                      'background-color': '#2E4053',
+                      'color': 'white',
+                      'font-weight': 'bold',
+                      'text-align': 'center'
+                  }
+              }
+              """)
+
               # Build grid options
               gb = GridOptionsBuilder.from_dataframe(df_for_grid)
-              gb.configure_default_column(editable=False, resizable=True, filter=True, sortable=True)
-              gb.configure_column("Metric", pinned="left", wrapText=True, autoHeight=True, width=300)
+              gb.configure_default_column(editable=False, resizable=True, filter=True, sortable=True,cellStyle=cell_style_jscode,headerClass="custom-header")
+              gb.configure_column("Metric", pinned="left", wrapText=True, autoHeight=True, width=300,headerTooltip="Metric name")
               # enable quick filter and pagination
               gb.configure_grid_options(domLayout='normal')
               gb.configure_selection(selection_mode="single", use_checkbox=False)
               gb.configure_pagination(enabled=True, paginationPageSize=10)
               grid_options = gb.build()
+              grid_options["defaultColDef"]["headerComponentParams"] = {
+                        "template": """
+                          <div class='ag-cell-label-container' role='presentation' style='background-color:#2E4053;color:white;font-weight:bold;text-align:center;padding:4px;'>
+                            <span ref='eLabel'></span>
+                          </div>
+                          """
+              }
 
               # Display
               grid_response = AgGrid(
