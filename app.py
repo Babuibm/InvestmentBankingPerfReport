@@ -46,36 +46,44 @@ def main():
 
     # Tab 0: Weekly Highlights (multiline text area for bullets)
     with tabs[0]:
-        st.header("Weekly Highlights")
-        st.caption("Enter 8–10 bullet points (each bullet on a new line). Use plain text or Markdown.")
-        # restore from session_state if present; otherwise default empty
-        default_text = st.session_state.get("weekly_highlights", "")
-        highlights = st.text_area(
-            "Enter highlights (each bullet on new line):",
-            value=default_text,
-            height=220,
-            key="weekly_highlights_input",
-            placeholder="- Bullet 1\n- Bullet 2\n- Bullet 3\n"
-        )
 
-        # Save to session_state so it persists for the session
-        if st.button("Save highlights to session"):
-            st.session_state["weekly_highlights"] = highlights
-            st.success("Highlights saved for this session.")
+        # in app.py Weekly Highlights tab
+        highlights_path = Path("data/weekly_highlights.txt")
+        initial = highlights_path.read_text() if highlights_path.exists() else ""
+        highlights = st.text_area("Highlights", value=initial, height=240)
+        if st.button("Save highlights"):
+          highlights_path.write_text(highlights)
 
-        # Provide a quick preview rendered as Markdown (so bullets show nicely)
-        if highlights.strip():
-            st.subheader("Preview")
-            st.markdown(highlights)
-            # download button to export as .txt
-            st.download_button(
-                label="Download highlights (.txt)",
-                data=highlights,
-                file_name="weekly_highlights.txt",
-                mime="text/plain"
-            )
-        else:
-            st.info("No highlights entered yet. Start typing above.")
+        # st.header("Weekly Highlights")
+        # st.caption("Enter 8–10 bullet points (each bullet on a new line). Use plain text or Markdown.")
+        # # restore from session_state if present; otherwise default empty
+        # default_text = st.session_state.get("weekly_highlights", "")
+        # highlights = st.text_area(
+        #     "Enter highlights (each bullet on new line):",
+        #     value=default_text,
+        #     height=220,
+        #     key="weekly_highlights_input",
+        #     placeholder="- Bullet 1\n- Bullet 2\n- Bullet 3\n"
+        # )
+
+        # # Save to session_state so it persists for the session
+        # if st.button("Save highlights to session"):
+        #     st.session_state["weekly_highlights"] = highlights
+        #     st.success("Highlights saved for this session.")
+
+        # # Provide a quick preview rendered as Markdown (so bullets show nicely)
+        # if highlights.strip():
+        #     st.subheader("Preview")
+        #     st.markdown(highlights)
+        #     # download button to export as .txt
+        #     st.download_button(
+        #         label="Download highlights (.txt)",
+        #         data=highlights,
+        #         file_name="weekly_highlights.txt",
+        #         mime="text/plain"
+        #     )
+        # else:
+        #     st.info("No highlights entered yet. Start typing above.")
 
     # Tab 1: Summary
     with tabs[1]:

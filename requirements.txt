@@ -1,6 +1,27 @@
-streamlit
+# core
 pandas
 numpy
 matplotlib
+pillow
+scikit-learn
 python-dateutil
-streamlit-aggrid
+
+# streamlit / app UI (if not already present)
+streamlit
+st-aggrid
+
+# langchain + HF runtime
+langchain
+langchain-community
+transformers>=4.34.0
+torch               # CPU build; Actions picks appropriate wheel
+accelerate
+huggingface-hub
+safetensors
+sentencepiece
+
+# utilities
+python-dotenv
+email-validator
+
+
