@@ -2,7 +2,7 @@ import os
 import numpy as np
 import matplotlib
 matplotlib.use("Agg")
-from agents.config import OUT_DIR, EMAIL_FROM, EMAIL_TO, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+from config import OUT_DIR, EMAIL_FROM, EMAIL_TO, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
