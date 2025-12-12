@@ -2,6 +2,7 @@
 import streamlit as st
 import numpy as np
 from app_core.analytics import run_analytics
+from app_core.analytics import load_data
 from app_core.charts.num_deals_chart import plot_deal_volumes
 from app_core.charts.val_deals_chart import plot_deal_value
 from app_core.charts.trade_cap_stp_chart import plot_trade_cap_stp
@@ -141,7 +142,7 @@ def main():
               # """)
 
               # header_template = """
-              #   <div class='ag-cell-label-container' role='presentation' 
+              #   <div class='ag-cell-label-container' role='presentation'
               #       style='background-color:#E5E7E9; color:#000000; font-weight:bold; text-align:center; padding:6px;'>
               #     <span ref='eLabel'></span>
               #   </div>
@@ -169,7 +170,7 @@ def main():
               gb.configure_pagination(enabled=True, paginationPageSize=10)
               grid_options = gb.build()
               # grid_options["defaultColDef"]["headerComponentParams"] = {
-                        # "template": header_template }                          
+                        # "template": header_template }
 
               # Display
               grid_response = AgGrid(

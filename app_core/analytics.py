@@ -6,9 +6,8 @@ import numpy as np
 BASE_DIR = Path(__file__).resolve().parents[1]  # -> my-streamlit-app/
 DATA_DIR = BASE_DIR / "data"
 
-
-def run_analytics(cutoff_date_str: str = "2025-12-06"):
-    """
+def load_data():
+  """
     Load all deal data, compute weekly metrics per Product_subtype,
     and return a dictionary with results usable by app.py and chart modules.
     """
@@ -34,6 +33,32 @@ def run_analytics(cutoff_date_str: str = "2025-12-06"):
     df_derint = pd.read_csv(derint_data_path)
     df_dercr = pd.read_csv(dercr_data_path)
     df_margincalls = pd.read_csv(call_data_path)
+
+    return {
+        "equity": df_equity,
+        "fixedincome": df_fixedincome,
+        "repos": df_repos,
+        "fxspot": df_fxspot,
+        "derfx": df_derfx,
+        "dereq": df_dereq,
+        "derint": df_derint,
+        "dercr": df_dercr,
+        "margincalls": df_margincalls,
+    }
+
+def run_analytics(cutoff_date_str: str = "2025-12-06"):
+    
+    raw = load_data()
+
+    df_equity     = raw["equity"]
+    df_fixedincome = raw["fixedincome"]
+    df_repos      = raw["repos"]
+    df_fxspot     = raw["fxspot"]
+    df_derfx      = raw["derfx"]
+    df_dereq      = raw["dereq"]
+    df_derint     = raw["derint"]
+    df_dercr      = raw["dercr"]
+    df_margincalls = raw["margincalls"]
 
     # ---- Common deal_value_usd field per product ----
     df_equity["deal_value_usd"] = df_equity["Gross_amount_USD"]
