@@ -1,7 +1,7 @@
-from agents.data_quality_agent import run_data_quality
-from agents.analytics_agent import run_analytics_and_notify
-from agents.chart_agent import run_charts_and_interpret
-from agents.config import DATA_DIR
+from data_quality_agent import run_data_quality
+from analytics_agent import run_analytics_and_notify
+from chart_agent import run_charts_and_interpret
+from config import DATA_DIR
 
 def run_all(file_list):
     # step 1: data quality
