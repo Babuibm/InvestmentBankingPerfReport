@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]  # -> my-streamlit-app/
 DATA_DIR = BASE_DIR / "data"
 
 def load_data():
-  """
+    """
     Load all deal data, compute weekly metrics per Product_subtype,
     and return a dictionary with results usable by app.py and chart modules.
     """
