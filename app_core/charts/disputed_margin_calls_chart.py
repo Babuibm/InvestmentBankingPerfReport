@@ -88,7 +88,12 @@ def plot_disputed_margin_calls(df_margincalls: pd.DataFrame, last_n_weeks: int =
 
         return fig1, fig2
 
-    week_labels = [str(w) for w in last_weeks]
+    #week_labels = [str(w) for w in last_weeks]
+
+    week_labels = [
+    f"{w.start_time.strftime('%d-%b')} to {w.end_time.strftime('%d-%b')}"
+    for w in last_weeks
+        ]
 
     # ---------------------------
     # 2. Aggregations: counts and amounts by Margin_type x week
