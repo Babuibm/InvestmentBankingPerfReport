@@ -12,6 +12,7 @@ from app_core.charts.unsettled_deals_chart import plot_deals_unsettled
 from app_core.charts.disputed_margin_calls_chart import plot_disputed_margin_calls
 from st_aggrid import AgGrid, GridOptionsBuilder, DataReturnMode, GridUpdateMode
 from st_aggrid.shared import JsCode
+from pathlib import Path
 
 
 def _show_fig_in_column(col, fig, caption=None):
