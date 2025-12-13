@@ -59,8 +59,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           STREAMLIT_URL: ${{ secrets.STREAMLIT_URL }}
-          GEMMA_MODEL_ID: ${{ secrets.GEMMA_MODEL_ID }}
-          GEMMA_MAX_NEW_TOKENS: ${{ secrets.GEMMA_MAX_NEW_TOKENS }}
+          
         run: |
           python agents/run_weekly_report.py
 
