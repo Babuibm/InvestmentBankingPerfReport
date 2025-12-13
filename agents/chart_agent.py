@@ -192,7 +192,8 @@ def run_charts_and_interpret(results: Dict):
 
     for name, txt in interpretations:
         if txt:
-            highlights += f"{name}: {txt}\n\n"
+            highlights += f"{txt}\n\n"
+            
 
     # Now prepare and send email: first short message with URL (configurable), then attach images
     web_url = os.environ.get("STREAMLIT_URL", "https://investmentbankingperfreport.streamlit.app/")
