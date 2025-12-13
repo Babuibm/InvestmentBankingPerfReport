@@ -53,7 +53,7 @@ def run_data_quality(file_list):
     counts_by_subproduct = {}
     details_problem_rows = []
     for fname in file_list:
-        path = sorted((DATA_DIR).glob("*.csv"))
+        path = DATA_DIR / fname
         if not path.exists():
             findings.append(f"File missing: {fname}")
             continue
@@ -78,7 +78,7 @@ def run_data_quality(file_list):
         accepted = df[ok_mask].copy()
         rejected = df[~ok_mask].copy()
         # persist accepted file into analytics location (overwrite)
-        accepted.to_csv(DATA_ANALYTICS / fname, index=False)
+        accepted.to_csv(DATA_DIR / fname, index=False)
         counts_by_subproduct[fname] = len(accepted)
         if not rejected.empty:
             details_problem_rows.append((fname, rejected.head(50)))  # include top 50 problem rows
