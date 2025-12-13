@@ -17,7 +17,7 @@ def create_gemma_llm(model_id: Optional[str] = None, max_new_tokens: int = MAX_N
     model_id = model_id or MODEL_ID
 
     # Load tokenizer and model (CPU-friendly)
-    tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=True,token=os.environ.get("HF_TOKEN"))
 
     # Use low_cpu_mem_usage to reduce peak memory where supported
     model = AutoModelForCausalLM.from_pretrained(
@@ -25,7 +25,8 @@ def create_gemma_llm(model_id: Optional[str] = None, max_new_tokens: int = MAX_N
         device_map="cpu",
         torch_dtype=torch.float32,
         low_cpu_mem_usage=True,
-        trust_remote_code=True  # Gemma models often require trust_remote_code
+        trust_remote_code=True  # Gemma models often require trust_remote_code,
+        token=os.environ.get("HF_TOKEN")
     )
 
     # Build HF pipeline
