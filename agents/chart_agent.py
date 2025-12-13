@@ -147,15 +147,15 @@ def run_charts_and_interpret(results: Dict):
 
     prompt = PromptTemplate(
         input_variables=["chart_name"],
-        template="""
-        You are an analyst at an investment bank covering equities, bonds, and derivatives.
-        Summarize the recent weekly change for the metric: {chart_name}.
-        Write a short executive paragraph (2–3 lines) stating:
-        - whether it increased or decreased materially
-        - one likely business reason
-        - one practical action to take
-        Respond with only the paragraph.
-        """
+        template=(
+            "You are an analyst at an investment bank covering equities, bonds, and derivatives.\n"
+            "Summarize the recent weekly change for the metric: {chart_name}.\n"
+            "Write a short executive paragraph (2–3 lines) stating:\n"
+            "- whether it increased or decreased materially\n"
+            "- one likely business reason\n"
+            "- one practical action to take\n"
+            "Respond with only the paragraph."
+        )
     )
 
     chain = prompt | llm
