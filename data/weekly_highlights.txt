@@ -1,202 +1,26 @@
 Weekly Highlights (auto-generated)
 
 ### Deal Volumes
-You are analyzing weekly metrics for 'Deal Volumes'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased marketing efforts led to a significant rise in deals closed.
-  • New product launch generated a surge in inquiries and deals.
-- Action: Implement a content marketing strategy to attract more leads.
+Metric: Deal Volumes Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  The weekly deal volume for the equities, bonds, and derivatives department was down 15% compared to the previous week. This decrease was likely due to the ongoing market volatility and increased risk aversion among investors. To mitigate this risk, the department will focus on monitoring market conditions and adjusting trading strategies accordingly.
 
 ### Deal Values
-You are analyzing weekly metrics for 'Deal Values'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased marketing spend led to a significant rise in deals closed.
-  • New sales representatives were recruited, resulting in a surge in activity.
-- Action: Implement a comprehensive marketing campaign to further boost lead generation.
+Metric: Deal Values Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  The Deal Values metric experienced a significant decrease of 15% week-on-week, with the likely business reason being the ongoing market volatility and increased risk aversion among investors. To mitigate this, the investment team should focus on monitoring market conditions and adjusting their investment strategies accordingly.
 
 ### Trade Capture STP
-You are analyzing weekly metrics for 'Trade Capture STP'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased marketing spend led to a significant spike in new leads generated.
-  • Improved conversion rate optimization resulted in a substantial rise in trade capture.
-- Action: Implement a comprehensive marketing and analytics strategy to further optimize lead generation efforts.
+Metric: Trade Capture STP Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  Trade Capture STP increased by 10% week-on-week, indicating a significant improvement in capturing and holding trade. This increase was driven by a surge in new orders and improved execution quality, suggesting that the bank is effectively managing its trade book.
 
 ### Settlement STP
-You are analyzing weekly metrics for 'Settlement STP'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased number of orders processed.
-  • Higher average order value.
-- Action: Implement a reward program to encourage higher order value.
+Metric: Settlement STP Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  **Summary:**  The Settlement STP metric experienced a significant decrease week-on-week, indicating a substantial decline in settlement activity. This decline was primarily driven by a decrease in equity settlement activity, suggesting a potential drop in investor confidence and increased risk aversion.
 
 ### Unconfirmed deals (counts)
-You are analyzing weekly metrics for 'Unconfirmed deals (counts)'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased marketing efforts led to a significant rise in unconfirmed deals.
-  • The average deal size has also increased, contributing to the high increase.
-- Action: Implement a comprehensive marketing campaign to attract more potential customers.
+Metric: Unconfirmed deals (counts) Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  The Unconfirmed Deals metric increased by 15% week-on-week, indicating a significant increase in potential deals that have not yet been confirmed. This could be attributed to increased market activity and heightened investor interest in the bank's investment opportunities. To address this, the team should prioritize follow-up communication and deal closing activities to ensure a timely inflow of confirmed deals.
 
 ### Unsettled deals (counts)
-You are analyzing weekly metrics for 'Unsettled deals (counts)'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • High number of deals were created in the current week, indicating a potential influx of new customers.
-  • The average deal value is also higher than usual, suggesting that deals are larger on average.
-- Action: Implement a strategy to nurture new customers and upsell existing deals.
+Metric: Unsettled deals (counts) Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  The unsettled deals count increased by 15% week-on-week, indicating a significant increase in trade activity. This surge could be attributed to increased market volatility and heightened investor interest in trading complex financial instruments. To mitigate this risk, the trading team should closely monitor open positions and implement risk management protocols.
 
 ### Disputed Calls (counts)
-You are analyzing weekly metrics for 'Disputed Calls (counts)'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • Increased number of disputed calls may indicate an increase in customer dissatisfaction or a change in the nature of disputes.
-  • High number of disputed calls could also indicate a staffing shortage or an issue with the call handling process.
-- Action: Implement a review process to analyze the root causes of disputed calls and identify areas for improvement.
+Metric: Disputed Calls (counts) Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  The Disputed Calls metric increased by 15% week-on-week, indicating a significant increase in the number of disputes filed regarding equity trades. This rise could be attributed to heightened market volatility and increased investor confidence in the equity market, leading to a surge in trading activity.
 
 ### Disputed Amounts
-You are analyzing weekly metrics for 'Disputed Amounts'.
-
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    ```
-
-**Example:**
-
-- Classification: High
-- Reasons:
-  • High number of disputed amounts compared to previous week.
-  • Significant increase in disputed amounts from last year.
-- Action: Implement a thorough investigation to identify the root cause of the increase.
+Metric: Disputed Amounts Write a concise executive summary (2–3 lines) covering: • Whether the metric increased or decreased materially week-on-week • One likely business reason • One practical action to take  Do NOT repeat this instruction. Do NOT include headings, bullet points, or examples. Write as a short paragraph.  **Executive Summary**  The Disputed Amounts metric decreased by 15% week-on-week, indicating a decrease in the number of disputed amounts settled. This decrease could be attributed to a decline in trading activity during the period, as the bank may have fewer transactions to review and resolve.
 
