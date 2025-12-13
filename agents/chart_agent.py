@@ -14,7 +14,7 @@ from pathlib import Path
 # Replace this with your LangChain/Gemma client setup.
 #from langchain import LLMChain, PromptTemplate
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import LLMChain
+from langchain.chains.llm import LLMChain
 from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from gemma_llm import create_gemma_llm
