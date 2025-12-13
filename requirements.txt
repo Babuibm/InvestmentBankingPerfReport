@@ -11,8 +11,8 @@ streamlit
 streamlit-aggrid
 
 # langchain + HF runtime
-langchain==0.0.350
-langchain-community==0.0.21
+langchain
+langchain-community
 transformers>=4.34.0
 torch               # CPU build; Actions picks appropriate wheel
 accelerate
