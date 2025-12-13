@@ -118,7 +118,7 @@ def run_charts_and_interpret(results: Dict):
     - Action: <short actionable suggestion>
     """
 
-        llm_text = llm(prompt).strip()
+        llm_text = llm.invoke(prompt).strip()
         interpretations.append((name, llm_text))
 
     # Build Weekly highlights text from interpretations (concatenate)
