@@ -13,6 +13,8 @@ from pathlib import Path
 # LLM: use LangChain wrapper. Example using a generic LLM interface placeholder.
 # Replace this with your LangChain/Gemma client setup.
 #from langchain import LLMChain, PromptTemplate
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
 from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from gemma_llm import create_gemma_llm
@@ -108,46 +110,88 @@ def run_charts_and_interpret(results: Dict):
 
     # Interpretation: for each chart compute a key metric (example: % change last two weeks)
 
+    # llm = create_gemma_llm()
+
+    # interpretations = []  # list of (name, text)
+
+    # chart_items = [
+    #     ("Deal Volumes", p1),
+    #     ("Deal Values", p2),
+    #     ("Trade Capture STP", p3),
+    #     ("Settlement STP", p4),
+    #     ("Unconfirmed deals (counts)", p5),
+    #     ("Unsettled deals (counts)", p6),
+    #     ("Disputed Calls (counts)", p7),
+    #     ("Disputed Amounts", p8),
+    # ]
+
+    # for name, fig_path in chart_items:
+
+    #     prompt = f"""
+    #       You are analyzing weekly metrics for an investment bank involved in equities, bonds, and derivatives.
+    #       Metric: {name}
+    #       Write a concise executive summary (2–3 lines) covering:
+    #       • Whether the metric increased or decreased materially week-on-week
+    #       • One likely business reason
+    #       • One practical action to take
+
+    #       Do NOT repeat this instruction.
+    #       Do NOT include headings, bullet points, or examples.
+    #       Write as a short paragraph.
+    #       """
+
+    #     llm_text = llm.invoke(prompt).strip()
+    #     clean_text = clean_llm_output(llm_text)
+    #     interpretations.append((name, clean_text))
     llm = create_gemma_llm()
 
-    interpretations = []  # list of (name, text)
+    prompt_tmpl = PromptTemplate(
+          input_variables=["metric_name"],
+          template=(
+              "You are an analyst at an investment bank covering equities, bonds, and derivatives.\n"
+              "Summarize the recent weekly change for the metric: {metric_name}.\n"
+              "Write a short executive paragraph (2–3 lines) stating:\n"
+              "- whether it increased or decreased materially\n"
+              "- one likely business reason\n"
+              "- one practical action to take\n"
+              "Respond with only the paragraph."
+          ),
+      )
+
+    chain = LLMChain(llm=llm, prompt=prompt_tmpl)
+
+    interpretations = []
 
     chart_items = [
-        ("Deal Volumes", p1),
-        ("Deal Values", p2),
-        ("Trade Capture STP", p3),
-        ("Settlement STP", p4),
-        ("Unconfirmed deals (counts)", p5),
-        ("Unsettled deals (counts)", p6),
-        ("Disputed Calls (counts)", p7),
-        ("Disputed Amounts", p8),
+          "Deal Volumes",
+          "Deal Values",
+          "Trade Capture STP",
+          "Settlement STP",
+          "Unconfirmed deals (counts)",
+          "Unsettled deals (counts)",
+          "Disputed Calls (counts)",
+          "Disputed Amounts",
     ]
 
-    for name, fig_path in chart_items:
-
-        prompt = f"""
-          You are analyzing weekly metrics for an investment bank involved in equities, bonds, and derivatives.
-          Metric: {name}
-          Write a concise executive summary (2–3 lines) covering:
-          • Whether the metric increased or decreased materially week-on-week
-          • One likely business reason
-          • One practical action to take
-
-          Do NOT repeat this instruction.
-          Do NOT include headings, bullet points, or examples.
-          Write as a short paragraph.
-          """
-
-        llm_text = llm.invoke(prompt).strip()
-        clean_text = clean_llm_output(llm_text)
-        interpretations.append((name, clean_text))
+    for name in chart_items:
+          try:
+              text = chain.run(metric_name=name).strip()
+              interpretations.append((name, text))
+          except Exception as e:
+              interpretations.append((name, "Insight could not be generated this week."))
 
     # Build Weekly highlights text from interpretations (concatenate)
-    highlights = "Weekly Highlights (auto-generated)\n\n"
+    # highlights = "Weekly Highlights (auto-generated)\n\n"
+    # for name, txt in interpretations:
+    #     if not txt:
+    #        continue 
+    #     highlights += f"### {name}\n{txt}\n\n"
+
+    highlights = "Weekly Highlights — Investment Banking Performance\n\n"
+
     for name, txt in interpretations:
-        if not txt:
-           continue 
-        highlights += f"### {name}\n{txt}\n\n"
+        if txt:
+            highlights += f"{name}: {txt}\n\n"
 
     # Now prepare and send email: first short message with URL (configurable), then attach images
     web_url = os.environ.get("STREAMLIT_URL", "https://investmentbankingperfreport.streamlit.app/")
