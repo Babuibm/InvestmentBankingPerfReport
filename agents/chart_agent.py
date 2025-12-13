@@ -48,6 +48,30 @@ def classify_change(pct_change: float) -> str:
         return "Medium"
     return "Low"
 
+def clean_llm_output(text: str) -> str:
+    if not text:
+        return ""
+
+    # Remove common instruction leaks
+    junk_markers = [
+        "You are analyzing",
+        "Provide:",
+        "Format",
+        "Example:",
+        "Classification:",
+        "Reasons:",
+        "Action:"
+    ]
+
+    lines = []
+    for line in text.splitlines():
+        if not any(j.lower() in line.lower() for j in junk_markers):
+            lines.append(line.strip())
+
+    cleaned = " ".join(lines)
+    return cleaned.strip()
+
+
 def run_charts_and_interpret(results: Dict):
     # results from analytics_agent (contains subproduct_metrics and perhaps deals_4w)
     subproduct_metrics = results["subproduct_metrics"]
@@ -102,28 +126,27 @@ def run_charts_and_interpret(results: Dict):
     for name, fig_path in chart_items:
 
         prompt = f"""
-    You are analyzing weekly metrics for '{name}'.
+          You are analyzing weekly metrics for an investment bank involved in equities, bonds, and derivatives.
+          Metric: {name}
+          Write a concise executive summary (2–3 lines) covering:
+          • Whether the metric increased or decreased materially week-on-week
+          • One likely business reason
+          • One practical action to take
 
-    Provide:
-    1. One-line summary of whether the % change is High, Medium, or Low.
-    2. Two bullet reasons (insights).
-    3. One short action recommendation.
-
-    Format EXACTLY like this:
-
-    - Classification: High/Medium/Low
-    - Reasons:
-      • Reason 1
-      • Reason 2
-    - Action: <short actionable suggestion>
-    """
+          Do NOT repeat this instruction.
+          Do NOT include headings, bullet points, or examples.
+          Write as a short paragraph.
+          """
 
         llm_text = llm.invoke(prompt).strip()
-        interpretations.append((name, llm_text))
+        clean_text = clean_llm_output(llm_text)
+        interpretations.append((name, clean_text))
 
     # Build Weekly highlights text from interpretations (concatenate)
     highlights = "Weekly Highlights (auto-generated)\n\n"
     for name, txt in interpretations:
+        if not txt:
+           continue 
         highlights += f"### {name}\n{txt}\n\n"
 
     # Now prepare and send email: first short message with URL (configurable), then attach images
