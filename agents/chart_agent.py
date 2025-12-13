@@ -13,7 +13,7 @@ from pathlib import Path
 # LLM: use LangChain wrapper. Example using a generic LLM interface placeholder.
 # Replace this with your LangChain/Gemma client setup.
 #from langchain import LLMChain, PromptTemplate
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
