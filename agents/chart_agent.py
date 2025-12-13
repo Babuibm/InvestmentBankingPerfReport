@@ -51,6 +51,8 @@ def classify_change(pct_change: float) -> str:
 def run_charts_and_interpret(results: Dict):
     # results from analytics_agent (contains subproduct_metrics and perhaps deals_4w)
     subproduct_metrics = results["subproduct_metrics"]
+    deals_4w = results["deals_4w"]
+    df_margincalls = ["df_margincalls"]
     # build each chart by calling your chart functions and saving as PNG
     # Example for chart1
     from app_core.charts.num_deals_chart import plot_deal_volumes
@@ -77,8 +79,8 @@ def run_charts_and_interpret(results: Dict):
     fig6 = plot_deals_unsettled(subproduct_metrics)
     p6 = OUT_DIR / "chart6_breaks_amounts.png"; fig6.savefig(p6, bbox_inches="tight"); images.append(str(p6))
     fig_counts, fig_amounts = plot_disputed_margin_calls(df_margincalls)
-    p7 = OUT_DIR / "chart7_disc_counts.png"; fig7.savefig(p7, bbox_inches="tight"); images.append(str(p7))
-    p8 = OUT_DIR / "chart8_disc_amounts.png"; fig8.savefig(p8, bbox_inches="tight"); images.append(str(p8))
+    p7 = OUT_DIR / "chart7_disc_counts.png"; fig_counts.savefig(p7, bbox_inches="tight"); images.append(str(p7))
+    p8 = OUT_DIR / "chart8_disc_amounts.png"; fig_amounts.savefig(p8, bbox_inches="tight"); images.append(str(p8))
 
     # Interpretation: for each chart compute a key metric (example: % change last two weeks)
 
