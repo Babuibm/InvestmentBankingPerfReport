@@ -14,7 +14,7 @@ from pathlib import Path
 # Replace this with your LangChain/Gemma client setup.
 #from langchain import LLMChain, PromptTemplate
 from langchain_core.prompts import PromptTemplate
-from langchain.chains.llm import LLMChain
+#from langchain.chains.llm import LLMChain
 from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from gemma_llm import create_gemma_llm
@@ -145,40 +145,41 @@ def run_charts_and_interpret(results: Dict):
     #     interpretations.append((name, clean_text))
     llm = create_gemma_llm()
 
-    prompt_tmpl = PromptTemplate(
-          input_variables=["metric_name"],
-          template=(
-              "You are an analyst at an investment bank covering equities, bonds, and derivatives.\n"
-              "Summarize the recent weekly change for the metric: {metric_name}.\n"
-              "Write a short executive paragraph (2–3 lines) stating:\n"
-              "- whether it increased or decreased materially\n"
-              "- one likely business reason\n"
-              "- one practical action to take\n"
-              "Respond with only the paragraph."
-          ),
-      )
+    prompt = PromptTemplate(
+        input_variables=["chart_name"],
+        template="""
+        You are an analyst at an investment bank covering equities, bonds, and derivatives.
+        Summarize the recent weekly change for the metric: {chart_name}.
+        Write a short executive paragraph (2–3 lines) stating:
+        - whether it increased or decreased materially
+        - one likely business reason
+        - one practical action to take
+        Respond with only the paragraph.
+        """
+    )
 
-    chain = LLMChain(llm=llm, prompt=prompt_tmpl)
+    chain = prompt | llm
 
     interpretations = []
 
     chart_items = [
-          "Deal Volumes",
-          "Deal Values",
-          "Trade Capture STP",
-          "Settlement STP",
-          "Unconfirmed deals (counts)",
-          "Unsettled deals (counts)",
-          "Disputed Calls (counts)",
-          "Disputed Amounts",
+        "Deal Volumes",
+        "Deal Values",
+        "Trade Capture STP",
+        "Settlement STP",
+        "Unconfirmed deals (counts)",
+        "Unsettled deals (counts)",
+        "Disputed Calls (counts)",
+        "Disputed Amounts",
     ]
 
     for name in chart_items:
-          try:
-              text = chain.run(metric_name=name).strip()
-              interpretations.append((name, text))
-          except Exception as e:
-              interpretations.append((name, "Insight could not be generated this week."))
+        try:
+            llm_text = chain.invoke({"chart_name": name}).strip()
+            interpretations.append((name, llm_text))
+        except Exception:
+            interpretations.append((name, "Insight could not be generated this week."))
+
 
     # Build Weekly highlights text from interpretations (concatenate)
     # highlights = "Weekly Highlights (auto-generated)\n\n"
