@@ -49,9 +49,20 @@ def main():
     with tabs[0]:
 
         # in app.py Weekly Highlights tab
-        highlights_path = Path("data/weekly_highlights.txt")
-        initial = highlights_path.read_text() if highlights_path.exists() else ""
-        highlights = st.text_area("Highlights", value=initial, height=240)
+        highlights_path = Path(__file__).resolve().parent / "data" / "weekly_highlights.txt"
+
+        if highlights_path.exists():
+          initial = highlights_path.read_text(encoding="utf-8")
+        else:
+          initial = ""
+
+        highlights = st.text_area(
+          "Weekly Highlights (AI Generated)",
+          value=initial,
+          height=300)
+
+        #initial = highlights_path.read_text() if highlights_path.exists() else ""
+        #highlights = st.text_area("Highlights", value=initial, height=240)
         if st.button("Save highlights"):
           highlights_path.write_text(highlights)
 
