@@ -6,13 +6,14 @@ name: Weekly Report (Gemma LLM)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * MON'  # every Monday 02:00 UTC — adjust as needed
+    - cron: '0 2 * * MON'
 
 jobs:
   weekly-report:
     runs-on: ubuntu-latest
-    env:
-      # Gemma model id if you want to override
+    environment: ib-report   # ✅ Correct environment reference
+
+    env:                     # ✅ Global env for this job
       GEMMA_MODEL_ID: google/gemma-2b-it
       GEMMA_MAX_NEW_TOKENS: '256'
       PYTHONUNBUFFERED: '1'
@@ -50,7 +51,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run weekly orchestrator
-        env:
+        env:                     # ✅ Correct env block
           REPORT_EMAIL_FROM: ${{ secrets.REPORT_EMAIL_FROM }}
           REPORT_EMAIL_TO: ${{ secrets.REPORT_EMAIL_TO }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
@@ -58,7 +59,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           STREAMLIT_URL: ${{ secrets.STREAMLIT_URL }}
-          GEMMA_MODEL_ID: ${{ secrets.GEMMA_MODEL_ID }}   # optional override
+          GEMMA_MODEL_ID: ${{ secrets.GEMMA_MODEL_ID }}
           GEMMA_MAX_NEW_TOKENS: ${{ secrets.GEMMA_MAX_NEW_TOKENS }}
         run: |
           python agents/run_weekly_report.py
