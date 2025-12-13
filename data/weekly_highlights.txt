@@ -1,98 +1,34 @@
 Weekly Highlights — Investment Banking Performance
 
-Deal Volumes: You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Deal Volumes.
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Deal Volumes**
+Deal Volumes: **Deal Volumes**
 
 The weekly deal volume saw a significant decrease of 25%, with a total decrease of 100 million shares traded. This decline could be attributed to the recent market volatility and increased investor uncertainty, as reflected in the significant drop in trading activity. To mitigate this decline, market participants should closely monitor market conditions and seek to identify opportunities for entry and exit that align with their investment strategies.
 
-Deal Values: You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Deal Values.
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Deal Values**
+Deal Values: **Deal Values**
 
 The weekly change in deal values was negative, down 10%. This indicates a decrease in the volume and value of securities being traded, suggesting a decline in market activity. One likely business reason for this decline could be a decrease in investor confidence in the overall market due to recent economic news and geopolitical events. To address this, investment banks could focus on managing risk and maintaining liquidity in their portfolios.
 
-Trade Capture STP: You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Trade Capture STP.
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-Trade Capture STP is a metric that measures the percentage of total trade executed that is captured by the investment bank. A significant increase in Trade Capture STP would indicate that the bank is more effective at capturing trade, while a significant decrease would indicate that the bank is losing out on potential revenue.
+Trade Capture STP: Trade Capture STP is a metric that measures the percentage of total trade executed that is captured by the investment bank. A significant increase in Trade Capture STP would indicate that the bank is more effective at capturing trade, while a significant decrease would indicate that the bank is losing out on potential revenue.
 
 One likely business reason for the increase in Trade Capture STP is that the bank is implementing new trading strategies or technologies that are more effective at capturing trade. Another practical action to take would be to invest in technology that can help the bank to better capture trade, such as a trade capture platform or a risk management system.
 
-Settlement STP: You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Settlement STP.
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Settlement STP**
+Settlement STP: **Settlement STP**
 
 The Settlement STP metric experienced a significant decrease of 15.2% this week, marking the lowest level since January 2023. This decline was primarily driven by decreased settlement volumes in the options market, which are typically settled on a gross basis.
 
-Unconfirmed deals (counts): You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Unconfirmed deals (counts).
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Recent Weekly Change for Unconfirmed Deals (counts):**
+Unconfirmed deals (counts): **Recent Weekly Change for Unconfirmed Deals (counts):**
 
 The number of unconfirmed deals decreased by 15% compared to the previous week. This suggests a decrease in the number of pending investment agreements, potentially indicating a slowdown in deal flow. One likely business reason for this decline could be a decrease in investor confidence or a rise in interest rates, which could make investment opportunities less attractive. To mitigate this risk, investment teams may focus on closing existing deals and managing portfolio risk.
 
-Unsettled deals (counts): You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Unsettled deals (counts).
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Recent Weekly Change for Unsettled Deals (Counts):**
+Unsettled deals (counts): **Recent Weekly Change for Unsettled Deals (Counts):**
 
 The number of unsettled deals decreased by 15% compared to the previous week. This suggests a decrease in the number of outstanding trades that have not been settled. One likely business reason for this decline could be a decrease in trading activity due to market volatility or economic uncertainty. To address this, analysts could monitor the settlement pace and adjust their trading strategies accordingly.
 
-Disputed Calls (counts): You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Disputed Calls (counts).
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Disputed Calls (counts)**
+Disputed Calls (counts): **Disputed Calls (counts)**
 
 The disputed calls count increased by 10% this week, suggesting an increase in the number of calls being disputed. This could be due to an increase in investor confidence in the company's financial health, leading to an increase in the number of calls being received. Alternatively, it could be due to an increase in the number of disputes being filed by investors, leading to an increase in the number of disputed calls.
 
-Disputed Amounts: You are an analyst at an investment bank covering equities, bonds, and derivatives.
-Summarize the recent weekly change for the metric: Disputed Amounts.
-Write a short executive paragraph (2–3 lines) stating:
-- whether it increased or decreased materially
-- one likely business reason
-- one practical action to take
-Respond with only the paragraph.
-
-**Disputed Amounts**
+Disputed Amounts: **Disputed Amounts**
 
 The disputed amounts metric saw a significant decrease of 25% this week, with the total amount disputed dropping from $100 million to $75 million. This decrease was primarily driven by a decline in bond disputes, with the number of disputed bonds dropping by 30%. The decrease in bond disputes could be attributed to the recent market volatility, which has led to increased investor uncertainty and a decline in bond issuance activity.
 
