@@ -1,0 +1,202 @@
+Weekly Highlights (auto-generated)
+
+### Deal Volumes
+You are analyzing weekly metrics for 'Deal Volumes'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased marketing efforts led to a significant rise in deals closed.
+  • New product launch generated a surge in inquiries and deals.
+- Action: Implement a content marketing strategy to attract more leads.
+
+### Deal Values
+You are analyzing weekly metrics for 'Deal Values'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased marketing spend led to a significant rise in deals closed.
+  • New sales representatives were recruited, resulting in a surge in activity.
+- Action: Implement a comprehensive marketing campaign to further boost lead generation.
+
+### Trade Capture STP
+You are analyzing weekly metrics for 'Trade Capture STP'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased marketing spend led to a significant spike in new leads generated.
+  • Improved conversion rate optimization resulted in a substantial rise in trade capture.
+- Action: Implement a comprehensive marketing and analytics strategy to further optimize lead generation efforts.
+
+### Settlement STP
+You are analyzing weekly metrics for 'Settlement STP'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased number of orders processed.
+  • Higher average order value.
+- Action: Implement a reward program to encourage higher order value.
+
+### Unconfirmed deals (counts)
+You are analyzing weekly metrics for 'Unconfirmed deals (counts)'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased marketing efforts led to a significant rise in unconfirmed deals.
+  • The average deal size has also increased, contributing to the high increase.
+- Action: Implement a comprehensive marketing campaign to attract more potential customers.
+
+### Unsettled deals (counts)
+You are analyzing weekly metrics for 'Unsettled deals (counts)'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • High number of deals were created in the current week, indicating a potential influx of new customers.
+  • The average deal value is also higher than usual, suggesting that deals are larger on average.
+- Action: Implement a strategy to nurture new customers and upsell existing deals.
+
+### Disputed Calls (counts)
+You are analyzing weekly metrics for 'Disputed Calls (counts)'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • Increased number of disputed calls may indicate an increase in customer dissatisfaction or a change in the nature of disputes.
+  • High number of disputed calls could also indicate a staffing shortage or an issue with the call handling process.
+- Action: Implement a review process to analyze the root causes of disputed calls and identify areas for improvement.
+
+### Disputed Amounts
+You are analyzing weekly metrics for 'Disputed Amounts'.
+
+    Provide:
+    1. One-line summary of whether the % change is High, Medium, or Low.
+    2. Two bullet reasons (insights).
+    3. One short action recommendation.
+
+    Format EXACTLY like this:
+
+    - Classification: High/Medium/Low
+    - Reasons:
+      • Reason 1
+      • Reason 2
+    - Action: <short actionable suggestion>
+    ```
+
+**Example:**
+
+- Classification: High
+- Reasons:
+  • High number of disputed amounts compared to previous week.
+  • Significant increase in disputed amounts from last year.
+- Action: Implement a thorough investigation to identify the root cause of the increase.
+
