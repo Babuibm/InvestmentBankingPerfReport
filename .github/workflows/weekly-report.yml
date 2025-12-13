@@ -65,20 +65,19 @@ jobs:
           
         run: |
           python agents/run_weekly_report.py
-      - name: Prepare highlights directory
-        run: mkdir -p hl
+      
       - name: Persist weekly highlights to repo
         if: success()
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout main
-          git pull --rebase origin main
-          FILE=hl/weekly_highlights.txt
+          
+          
+          FILE=data/weekly_highlights.txt
           if [ -f "$FILE" ]; then
             git add "$FILE"
-            git diff --cached --quiet || git commit -m "Auto: update weekly highlights"
+            git commit -m "Auto: update weekly highlights" || echo "No changes to commit"
             git push origin main
           else
             echo "No highlights file generated; nothing to commit."
