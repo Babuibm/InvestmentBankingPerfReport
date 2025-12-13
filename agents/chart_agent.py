@@ -15,7 +15,7 @@ from pathlib import Path
 #from langchain import LLMChain, PromptTemplate
 from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
-from app_core.llm.gemma_llm import create_gemma_llm
+from gemma_llm import create_gemma_llm
 #from langchain.llms import OpenAI  # replace with your Gemma wrapper if available
 
 def send_email_with_images(subject, body_text, image_paths):
