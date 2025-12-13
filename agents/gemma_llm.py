@@ -25,7 +25,7 @@ def create_gemma_llm(model_id: Optional[str] = None, max_new_tokens: int = MAX_N
         device_map="cpu",
         torch_dtype=torch.float32,
         low_cpu_mem_usage=True,
-        trust_remote_code=True  # Gemma models often require trust_remote_code,
+        trust_remote_code=True,  # Gemma models often require trust_remote_code,
         token=os.environ.get("HF_TOKEN")
     )
 
