@@ -13,7 +13,7 @@ from pathlib import Path
 # LLM: use LangChain wrapper. Example using a generic LLM interface placeholder.
 # Replace this with your LangChain/Gemma client setup.
 from langchain import LLMChain, PromptTemplate
-from langchain_community.llms import HuggingFacePipeline
+#from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from app_core.llm.gemma_llm import create_gemma_llm
 #from langchain.llms import OpenAI  # replace with your Gemma wrapper if available
@@ -81,7 +81,7 @@ def run_charts_and_interpret(results: Dict):
     p8 = OUT_DIR / "chart8_disc_amounts.png"; fig8.savefig(p8, bbox_inches="tight"); images.append(str(p8))
 
     # Interpretation: for each chart compute a key metric (example: % change last two weeks)
-    
+
     llm = create_gemma_llm()
 
     interpretations = []  # list of (name, text)
@@ -117,7 +117,7 @@ def run_charts_and_interpret(results: Dict):
     """
 
         llm_text = llm(prompt).strip()
-        interpretations.append((name, llm_text))   
+        interpretations.append((name, llm_text))
 
     # Build Weekly highlights text from interpretations (concatenate)
     highlights = "Weekly Highlights (auto-generated)\n\n"
