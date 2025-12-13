@@ -52,7 +52,7 @@ def run_charts_and_interpret(results: Dict):
     # results from analytics_agent (contains subproduct_metrics and perhaps deals_4w)
     subproduct_metrics = results["subproduct_metrics"]
     deals_4w = results["deals_4w"]
-    df_margincalls = ["df_margincalls"]
+    df_margincalls = results["df_margincalls"]
     # build each chart by calling your chart functions and saving as PNG
     # Example for chart1
     from app_core.charts.num_deals_chart import plot_deal_volumes
