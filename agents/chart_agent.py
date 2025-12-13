@@ -12,8 +12,8 @@ from pathlib import Path
 
 # LLM: use LangChain wrapper. Example using a generic LLM interface placeholder.
 # Replace this with your LangChain/Gemma client setup.
-from langchain import LLMChain, PromptTemplate
-#from langchain_community.llms import HuggingFacePipeline
+#from langchain import LLMChain, PromptTemplate
+from langchain_community.llms import HuggingFacePipeline
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from app_core.llm.gemma_llm import create_gemma_llm
 #from langchain.llms import OpenAI  # replace with your Gemma wrapper if available
