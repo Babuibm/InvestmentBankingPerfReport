@@ -75,7 +75,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
           git pull --rebase origin main
-          FILE=data/weekly_highlights.txt
+          FILE=hl/weekly_highlights.txt
           if [ -f "$FILE" ]; then
             git add "$FILE"
             git diff --cached --quiet || git commit -m "Auto: update weekly highlights"
