@@ -33,6 +33,7 @@ def create_gemma_llm(model_id: Optional[str] = None, max_new_tokens: int = MAX_N
         do_sample=False,
         pad_token_id=tokenizer.eos_token_id,
         eos_token_id=tokenizer.eos_token_id,
+        return_full_text=False,   
     )
 
     return HuggingFacePipeline(pipeline=pipe)
