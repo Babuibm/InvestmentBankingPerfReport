@@ -65,7 +65,8 @@ jobs:
           
         run: |
           python agents/run_weekly_report.py
-
+      - name: Prepare highlights directory
+        run: mkdir -p hl
       - name: Persist weekly highlights to repo
         if: success()
         run: |
