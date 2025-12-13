@@ -34,7 +34,7 @@ def create_gemma_llm(model_id: Optional[str] = None, max_new_tokens: int = MAX_N
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        device= -1,  # CPU
+        #device= -1,  # CPU
         max_new_tokens=max_new_tokens,
         do_sample=False,
         pad_token_id=tokenizer.eos_token_id,
