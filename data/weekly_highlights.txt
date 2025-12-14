@@ -24,11 +24,13 @@ The number of unconfirmed deals decreased by 15% compared to the previous week. 
 
 The number of unsettled deals decreased by 15% compared to the previous week. This suggests a decrease in the number of outstanding trades that have not been settled. One likely business reason for this decline could be a decrease in trading activity due to market volatility or economic uncertainty. To address this, analysts could monitor the settlement pace and adjust their trading strategies accordingly.
 
-**Disputed Calls (counts)**
+Sure, here's the summary and executive paragraph:
 
-The disputed calls count increased by 10% this week, suggesting an increase in the number of calls being disputed. This could be due to an increase in investor confidence in the company's financial health, leading to an increase in the number of calls being received. Alternatively, it could be due to an increase in the number of disputes being filed by investors, leading to an increase in the number of disputed calls.
+**Recent Weekly Change for Disputed Marin Calls (counts):**
 
-**Disputed Amounts**
+The disputed Marin calls count decreased by 20% compared to the previous week. This suggests a decrease in the number of disputed calls received by the investment bank. One likely business reason for this decline could be a decrease in market volatility, which could make it easier for investors to resolve disputes. A practical action to take would be to monitor market conditions and adjust the bank's dispute resolution policies accordingly.
 
-The disputed amounts metric saw a significant decrease of 25% this week, with the total amount disputed dropping from $100 million to $75 million. This decrease was primarily driven by a decline in bond disputes, with the number of disputed bonds dropping by 30%. The decrease in bond disputes could be attributed to the recent market volatility, which has led to increased investor uncertainty and a decline in bond issuance activity.
+**Disputed Margin Amounts**
+
+The disputed margin amounts metric saw a significant decrease of 25% this week, with the average amount disputed dropping from $100 million to $80 million. This decrease was primarily driven by a decline in trading activity related to specific derivative contracts.
 
