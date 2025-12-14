@@ -110,39 +110,6 @@ def run_charts_and_interpret(results: Dict):
 
     # Interpretation: for each chart compute a key metric (example: % change last two weeks)
 
-    # llm = create_gemma_llm()
-
-    # interpretations = []  # list of (name, text)
-
-    # chart_items = [
-    #     ("Deal Volumes", p1),
-    #     ("Deal Values", p2),
-    #     ("Trade Capture STP", p3),
-    #     ("Settlement STP", p4),
-    #     ("Unconfirmed deals (counts)", p5),
-    #     ("Unsettled deals (counts)", p6),
-    #     ("Disputed Calls (counts)", p7),
-    #     ("Disputed Amounts", p8),
-    # ]
-
-    # for name, fig_path in chart_items:
-
-    #     prompt = f"""
-    #       You are analyzing weekly metrics for an investment bank involved in equities, bonds, and derivatives.
-    #       Metric: {name}
-    #       Write a concise executive summary (2–3 lines) covering:
-    #       • Whether the metric increased or decreased materially week-on-week
-    #       • One likely business reason
-    #       • One practical action to take
-
-    #       Do NOT repeat this instruction.
-    #       Do NOT include headings, bullet points, or examples.
-    #       Write as a short paragraph.
-    #       """
-
-    #     llm_text = llm.invoke(prompt).strip()
-    #     clean_text = clean_llm_output(llm_text)
-    #     interpretations.append((name, clean_text))
     llm = create_gemma_llm()
 
     prompt = PromptTemplate(
@@ -169,8 +136,8 @@ def run_charts_and_interpret(results: Dict):
         "Settlement STP",
         "Unconfirmed deals (counts)",
         "Unsettled deals (counts)",
-        "Disputed Calls (counts)",
-        "Disputed Amounts",
+        "Disputed Marin Calls (counts)",
+        "Disputed Margin Amounts",
     ]
 
     for name in chart_items:
@@ -182,18 +149,13 @@ def run_charts_and_interpret(results: Dict):
 
 
     # Build Weekly highlights text from interpretations (concatenate)
-    # highlights = "Weekly Highlights (auto-generated)\n\n"
-    # for name, txt in interpretations:
-    #     if not txt:
-    #        continue 
-    #     highlights += f"### {name}\n{txt}\n\n"
-
+    
     highlights = "Weekly Highlights — Investment Banking Performance\n\n"
 
     for name, txt in interpretations:
         if txt:
             highlights += f"{txt}\n\n"
-            
+
 
     # Now prepare and send email: first short message with URL (configurable), then attach images
     web_url = os.environ.get("STREAMLIT_URL", "https://investmentbankingperfreport.streamlit.app/")
