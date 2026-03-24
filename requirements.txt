@@ -1,5 +1,5 @@
 # core
-pandas
+pandas<3,>=1.4.0
 numpy
 matplotlib
 pillow
@@ -7,9 +7,9 @@ scikit-learn
 python-dateutil
 
 # streamlit / app UI (if not already present)
-streamlit
+streamlit==1.55.0
 streamlit-aggrid
-altair
+altair>=4,<5
 
 # langchain + HF runtime
 langchain
