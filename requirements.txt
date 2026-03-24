@@ -9,6 +9,7 @@ python-dateutil
 # streamlit / app UI (if not already present)
 streamlit
 streamlit-aggrid
+altair
 
 # langchain + HF runtime
 langchain
